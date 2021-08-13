@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  /* background-color: #efefef; */
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.gallery {
+  width: 100%;
+  float: left;
+  padding: 30px 100px 100px 320px;
+  /* padding-left: 170px; */
+}
+.gallery .title h1 {
+  font-size: 36px;
+  margin: 0px 0px 10px 35px;
+  color: #000000;
+  text-align: center;
+  padding-right: 200px;
+}
+/* .gallery .gallery-items .item {
+  float: left;
+  width: 25%;
+  position: relative;
+} */
+.gallery .gallery-items .item.hide {
+  display: none;
+}
+.gallery .gallery-items .item.show {
+  display: block;
+  animation: show 0.5s ease;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gallery .gallery-items .item img {
+  width: 100%;
+  display: block;
+}
+.gallery .gallery-items .item .caption {
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+.gallery .pagination {
+  width: 100%;
+  float: left;
+  padding-right: 170px;
+  /* padding: 15px; */
+  text-align: center;
+}
+.gallery .pagination div {
+  display: inline-block;
+  margin: 0 10px;
+  padding-top: 50px;
+  /* text-align: center; */
+  /* margin: 50px 50px 50px 30px; */
+  /* padding: 50px 50px 50px 50px; */
+}
+/* .pagination div {
+  padding-right: -100px;
+} */
+.gallery .pagination .page {
+  color: black;
+}
+.gallery .pagination .prev,
+.gallery .pagination .next {
+  color: #000;
+  border: 1px solid #000;
+  font-size: 15px;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.gallery .pagination .prev.disabled,
+.gallery .pagination .next.disabled {
+  border-color: gray;
+  color: gray;
+  pointer-events: none;
+}
+
+/* Parent Container */
+.item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Child Text Container */
+.item div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: black;
+  color: white;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Hover on Parent Container */
+.item:hover {
+  cursor: pointer;
+}
+
+.item:hover div {
+  width: 150px;
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.gallery-items .item:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
